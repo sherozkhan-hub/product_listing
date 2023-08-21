@@ -3,6 +3,7 @@
 import { useNavigate } from "react-router-dom";
 
 const Carts = ({ cart, cartDispatch }) => {
+  console.log(cart);
   const navigate = useNavigate();
 
   const handleDecrement = (item) => {
@@ -10,7 +11,7 @@ const Carts = ({ cart, cartDispatch }) => {
   };
 
   const handleBackPage = () => {
-    navigate("/products");
+    navigate("/");
   };
 
   return (

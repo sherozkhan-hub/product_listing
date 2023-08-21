@@ -23,7 +23,7 @@ const Product = ({ product, productDispatch, cartDispatch }) => {
   }, [params.id, productDispatch]);
 
   const handlePrevious = () => {
-    navigate("/products");
+    navigate("/");
   };
 
   const goToCart = () => {

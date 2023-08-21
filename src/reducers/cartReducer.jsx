@@ -34,14 +34,15 @@ export const cartReducer = (state, action) => {
       const isItemExist = state.cartItems.find((i) => i.id === item.id);
 
       if (isItemExist) {
+        if (isItemExist.quantity === 1) {
+          return {
+            ...state,
+            cartItems: state.cartItems.filter((i) => i.id !== item.id),
+          };
+        }
+
         const updatedCartItems = state.cartItems.map((i) => {
           if (i.id === item.id) {
-            if (i.quantity === 1) {
-              return {
-                ...state,
-                cartItems: state.cartItems.filter((i) => i.id !== item.id),
-              };
-            }
             console.log("quantity decremented");
             return { ...i, quantity: i.quantity - 1 };
           }

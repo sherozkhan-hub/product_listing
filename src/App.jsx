@@ -20,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/products"
+            path="/"
             element={
               <ProductList
                 products={product.productList}
